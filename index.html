@@ -18,10 +18,8 @@
       --beige: #d8c9a7;
       --white: #fffaf0;
       --muted: rgba(216, 201, 167, .72);
-      --glass: rgba(216, 201, 167, .10);
       --line: rgba(216, 201, 167, .22);
       --shadow: 0 28px 80px rgba(0, 0, 0, .28);
-      --radius: 28px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -55,9 +53,22 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
     }
 
+    .ambient-orb {
+      position: fixed;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+      filter: blur(34px);
+      opacity: .20;
+      background: radial-gradient(circle, var(--orange), transparent 68%);
+      transform: translate3d(var(--x, 70vw), var(--y, 20vh), 0);
+      transition: transform .18s ease-out;
+    }
+
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
-
     .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 
     .topbar {
@@ -88,27 +99,35 @@
       gap: 24px;
     }
 
-    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand { display: flex; align-items: center; }
     .brand-logo {
-      width: 82px;
-      height: 58px;
+      width: 140px;
+      height: auto;
       object-fit: contain;
-      filter: drop-shadow(0 12px 24px rgba(0,0,0,.28));
+      filter: drop-shadow(0 14px 28px rgba(0,0,0,.35));
     }
     .brand-mark {
-      width: 54px; height: 54px; border: 2px solid var(--beige); border-radius: 50%;
-      display: grid; place-items: center; color: var(--orange); font-weight: 900; font-size: 22px;
+      width: 54px;
+      height: 54px;
+      border: 2px solid var(--beige);
+      border-radius: 50%;
+      display: none;
+      place-items: center;
+      color: var(--orange);
+      font-weight: 900;
+      font-size: 22px;
       box-shadow: inset 0 -10px 0 rgba(255, 162, 57, .18);
     }
-    .brand strong { display: block; color: var(--beige); font-size: 24px; line-height: 1; font-family: "Playfair Display", serif; }
-    .brand span { display: block; color: var(--orange); font-size: 12px; letter-spacing: .32em; font-weight: 800; margin-top: 5px; }
 
     .menu { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: 14px; font-weight: 700; }
     .menu a { transition: .25s ease; }
     .menu a:hover { color: var(--orange); }
 
     .nav-cta, .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       border-radius: 999px;
       padding: 13px 22px;
       background: var(--orange);
@@ -120,9 +139,54 @@
     }
     .nav-cta:hover, .btn:hover { transform: translateY(-3px); box-shadow: 0 22px 54px rgba(255, 162, 57, .30); }
     .btn.secondary { background: transparent; color: var(--beige); border: 1px solid var(--line); box-shadow: none; }
+    .magnetic { transition: transform .18s ease; }
 
-    .hero { min-height: calc(100vh - 112px); display: grid; place-items: center; padding: 84px 0 110px; position: relative; }
+    .hero {
+      min-height: calc(100vh - 112px);
+      display: grid;
+      place-items: center;
+      padding: 84px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, rgba(57,58,46,.96));
+      pointer-events: none;
+    }
     .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 58px; align-items: center; }
+
+    .premium-line {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .premium-line svg {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: min(920px, 120vw);
+      height: 100%;
+      transform: translateX(-50%);
+      opacity: .42;
+    }
+    .premium-line path {
+      fill: none;
+      stroke: url(#lineGradient);
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-dasharray: 1600;
+      stroke-dashoffset: 1600;
+      animation: drawLine 3.2s ease forwards 1s;
+    }
+    @keyframes drawLine { to { stroke-dashoffset: 0; } }
 
     .eyebrow { color: var(--orange); font-weight: 900; letter-spacing: .24em; text-transform: uppercase; font-size: 13px; margin-bottom: 18px; }
     h1 {
@@ -146,24 +210,32 @@
       overflow: hidden;
       padding: 34px;
       isolation: isolate;
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
     }
+    .hero-card:hover { transform: translateY(-10px) scale(1.01); }
     .hero-card::before {
       content: "";
       position: absolute;
-      width: 450px; height: 450px;
+      width: 450px;
+      height: 450px;
       border: 52px solid var(--orange);
       border-radius: 50%;
-      right: -160px; top: -170px;
+      right: -160px;
+      top: -170px;
       opacity: .95;
       z-index: -1;
     }
     .hero-card::after {
       content: "";
       position: absolute;
-      width: 500px; height: 500px;
+      width: 500px;
+      height: 500px;
       border: 42px solid var(--beige);
       border-radius: 50%;
-      left: -230px; bottom: -220px;
+      left: -230px;
+      bottom: -220px;
       opacity: .92;
       z-index: -1;
     }
@@ -183,9 +255,14 @@
     .dots { display: grid; grid-template-columns: repeat(2, 6px); gap: 18px; opacity: .55; }
     .dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--beige); }
     .mockup-title { align-self: center; text-align: center; }
+    .mockup-title img { max-width: 340px; margin: 0 auto 18px; filter: drop-shadow(0 18px 30px rgba(0,0,0,.24)); }
     .mockup-title b { display:block; color: var(--beige); font-size: 42px; letter-spacing: .02em; }
     .mockup-title small { color: var(--orange); letter-spacing: .45em; font-weight: 900; }
     .mockup-bottom { display: grid; gap: 14px; color: var(--beige); font-weight: 800; text-transform: uppercase; font-size: 20px; }
+
+    .marquee { overflow: hidden; border-block: 1px solid var(--line); padding: 22px 0; color: var(--beige); background: rgba(0,0,0,.12); }
+    .marquee-track { display: flex; gap: 36px; width: max-content; animation: marquee 26s linear infinite; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
 
     .section { padding: 110px 0; position: relative; }
     .section-title { max-width: 760px; margin-bottom: 46px; }
@@ -205,87 +282,202 @@
     .service-copy { padding: 26px; }
     .service-copy h3 { font-size: clamp(34px, 4vw, 58px); line-height: .95; color: var(--white); letter-spacing: -.04em; margin-bottom: 18px; }
     .service-copy p { color: var(--muted); font-size: 18px; max-width: 520px; margin-bottom: 24px; }
+
     .service-visual {
-      min-height: 390px;
-      border-radius: 36px;
+      min-height: 420px;
+      border-radius: 38px;
       overflow: hidden;
-      border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 78% 20%, rgba(255,162,57,.9), transparent 32%),
-        linear-gradient(145deg, rgba(216,201,167,.18), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(216,201,167,.26);
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 34px 90px rgba(0,0,0,.34);
       position: relative;
+      isolation: isolate;
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, border-color .45s ease, filter .45s ease;
     }
     .service-visual::before {
       content: "";
       position: absolute;
-      inset: 28px;
-      border: 1px solid rgba(216,201,167,.26);
-      border-radius: 26px;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(24,25,20,.82), rgba(57,58,46,.28) 48%, rgba(255,162,57,.08)),
+        radial-gradient(circle at 18% 82%, rgba(255,162,57,.32), transparent 34%);
+      z-index: 1;
+      transition: opacity .45s ease;
+    }
+    .service-visual::after {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(255,250,240,.28);
+      border-radius: 28px;
+      z-index: 2;
+      pointer-events: none;
+      box-shadow: inset 0 0 0 1px rgba(255,162,57,.08);
     }
     .service-visual .label {
       position: absolute;
       left: 32px;
       bottom: 32px;
-      background: rgba(255,250,240,.92);
+      background: rgba(255,250,240,.88);
       color: var(--dark);
-      border-radius: 20px;
-      padding: 16px 20px;
+      border-radius: 999px;
+      padding: 15px 22px;
       font-weight: 900;
-      box-shadow: 0 18px 44px rgba(0,0,0,.22);
+      box-shadow: 0 18px 44px rgba(0,0,0,.26);
+      z-index: 3;
+      backdrop-filter: blur(12px);
+      transform: translateY(10px);
+      opacity: .92;
+      transition: transform .35s ease, opacity .35s ease, background .35s ease;
     }
-    .service-visual .big-word {
-      position: absolute;
-      right: 34px;
-      top: 42px;
-      color: rgba(216,201,167,.16);
-      font-size: 84px;
-      font-weight: 900;
-      letter-spacing: -.07em;
+    .service-visual:hover {
+      transform: translateY(-12px) scale(1.018);
+      box-shadow: 0 44px 110px rgba(0,0,0,.44);
+      border-color: rgba(255,162,57,.52);
+      filter: saturate(1.08) contrast(1.04);
     }
+    .service-visual:hover .label { transform: translateY(0); opacity: 1; background: rgba(255,250,240,.96); }
+    .service-visual:hover::before { opacity: .92; }
+    .visual-design { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('grafisch-design.png'); }
+    .visual-items { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('gepersonaliseerd.png'); }
+    .visual-print { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('drukwerk.png'); }
+    .visual-web { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('webdesign.png'); }
 
-    .marquee { overflow: hidden; border-block: 1px solid var(--line); padding: 22px 0; color: var(--beige); background: rgba(0,0,0,.12); }
-    .marquee-track { display: flex; gap: 36px; width: max-content; animation: marquee 26s linear infinite; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
-    @keyframes marquee { to { transform: translateX(-50%); } }
-
-    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .portfolio-card {
-      min-height: 320px;
-      border-radius: 28px;
-      background:
-        linear-gradient(to top, rgba(57,58,46,.96), rgba(57,58,46,.18) 54%),
-        var(--project-image),
-        linear-gradient(145deg, rgba(216,201,167,.16), rgba(255,255,255,.04));
-      background-size: cover;
-      background-position: center;
+    .portfolio-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: -14px 0 32px;
+    }
+    .filter-btn {
       border: 1px solid var(--line);
-      padding: 24px;
+      background: rgba(216,201,167,.08);
+      color: var(--beige);
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--orange);
+      color: var(--dark);
+      border-color: var(--orange);
+      transform: translateY(-2px);
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .portfolio-card {
+      min-height: 380px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(216,201,167,.14), rgba(255,255,255,.04));
+      border: 1px solid var(--line);
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: flex-start;
       box-shadow: 0 18px 55px rgba(0,0,0,.18);
-      transition: .28s ease;
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
       overflow: hidden;
       position: relative;
+      transform-style: preserve-3d;
+      will-change: transform;
     }
     .portfolio-card::before {
       content: "";
       position: absolute;
-      inset: 18px;
-      border: 1px solid rgba(216,201,167,.28);
+      inset: 14px;
+      border: 1px solid rgba(216,201,167,.18);
       border-radius: 22px;
       pointer-events: none;
+      z-index: 2;
     }
-    .portfolio-card > * { position: relative; z-index: 1; }
-    .project-textiel { --project-image: radial-gradient(circle at 75% 24%, rgba(255,162,57,.88), transparent 24%), linear-gradient(135deg, rgba(216,201,167,.26), rgba(78,81,63,.64)); }
-    .project-drukwerk { --project-image: radial-gradient(circle at 25% 18%, rgba(255,162,57,.78), transparent 25%), linear-gradient(135deg, rgba(78,81,63,.75), rgba(216,201,167,.18)); }
-    .project-design { --project-image: radial-gradient(circle at 55% 28%, rgba(216,201,167,.72), transparent 28%), linear-gradient(135deg, rgba(255,162,57,.30), rgba(57,58,46,.82)); }
-    .project-web { --project-image: radial-gradient(circle at 72% 40%, rgba(255,162,57,.72), transparent 22%), linear-gradient(135deg, rgba(216,201,167,.20), rgba(57,58,46,.85)); }
-    .project-cadeau { --project-image: radial-gradient(circle at 20% 70%, rgba(255,162,57,.70), transparent 26%), linear-gradient(135deg, rgba(78,81,63,.72), rgba(216,201,167,.18)); }
-    .project-stickers { --project-image: radial-gradient(circle at 65% 22%, rgba(216,201,167,.68), transparent 25%), linear-gradient(135deg, rgba(255,162,57,.28), rgba(57,58,46,.88)); }
-    .portfolio-card:hover { transform: translateY(-8px); }
+    .portfolio-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,162,57,.18), transparent 34%);
+      opacity: 0;
+      transition: opacity .25s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-10px) scale(1.01);
+      border-color: rgba(255,162,57,.42);
+      box-shadow: 0 28px 80px rgba(0,0,0,.26);
+    }
+    .portfolio-card:hover::after { opacity: 1; }
+    .portfolio-card > * { position: relative; z-index: 3; }
+    .portfolio-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 22px;
+      margin-bottom: 18px;
+      transition: transform .55s cubic-bezier(.2,.8,.2,1), filter .4s ease;
+      cursor: zoom-in;
+    }
+    .portfolio-card:hover .portfolio-img { transform: scale(1.06); filter: contrast(1.04) saturate(1.08); }
+    .project-tag {
+      display: inline-flex;
+      width: fit-content;
+      border: 1px solid rgba(255,162,57,.45);
+      color: var(--orange);
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      background: rgba(255,162,57,.08);
+    }
     .portfolio-card h3 { color: var(--beige); font-size: 23px; }
     .portfolio-card p { color: var(--muted); font-size: 14px; margin-top: 8px; }
+    .portfolio-card.is-hidden { display: none; }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(12,13,10,.92);
+      backdrop-filter: blur(16px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-content { width: min(1100px, 100%); position: relative; }
+    .lightbox img {
+      width: 100%;
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      box-shadow: 0 44px 110px rgba(0,0,0,.55);
+    }
+    .lightbox-caption { color: var(--beige); margin-top: 16px; font-weight: 900; text-align: center; }
+    .lightbox-close {
+      position: absolute;
+      right: -12px;
+      top: -54px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(216,201,167,.10);
+      color: var(--beige);
+      font-size: 28px;
+      cursor: pointer;
+    }
 
     .cta-panel {
       border-radius: 44px;
@@ -305,10 +497,12 @@
     .cta-panel::after {
       content: "";
       position: absolute;
-      width: 320px; height: 320px;
+      width: 320px;
+      height: 320px;
       border: 42px solid var(--orange);
       border-radius: 50%;
-      right: -120px; top: -130px;
+      right: -120px;
+      top: -130px;
       opacity: .45;
     }
     .cta-panel h2 { position: relative; z-index: 1; color: var(--beige); font-family: "Playfair Display", serif; font-size: clamp(42px, 5vw, 76px); line-height: .94; letter-spacing: -.04em; }
@@ -359,18 +553,14 @@
 </head>
 <body>
   <div class="grain"></div>
+  <div class="ambient-orb" id="ambientOrb"></div>
   <div class="topbar">Uniek gemaakt • Perfect afgewerkt • Kwaliteit op maat</div>
 
   <header>
     <nav class="container">
       <a href="#home" class="brand" aria-label="Atelier Putteman home">
-        <!-- Vervang logo-atelier-putteman.png door jouw echte logo-bestand -->
         <img class="brand-logo" src="logo-atelier-putteman.png" alt="Atelier Putteman logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-        <div class="brand-mark" style="display:none;">AP</div>
-        <div>
-          <strong>Atelier</strong>
-          <span>PUTTEMAN</span>
-        </div>
+        <div class="brand-mark">AP</div>
       </a>
       <div class="menu">
         <a href="#diensten">Diensten</a>
@@ -383,14 +573,27 @@
 
   <main id="home">
     <section class="hero">
+      <div class="premium-line" aria-hidden="true">
+        <svg viewBox="0 0 900 1200" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffa239"/>
+              <stop offset="50%" stop-color="#d8c9a7"/>
+              <stop offset="100%" stop-color="#ffa239"/>
+            </linearGradient>
+          </defs>
+          <path d="M455 0 C 260 180, 700 250, 430 430 S 280 720, 535 835 S 700 1040, 445 1200"/>
+        </svg>
+      </div>
+
       <div class="container hero-grid">
         <div class="reveal">
           <div class="eyebrow">Gepersonaliseerde artikelen • Drukwerk • Grafisch design</div>
           <h1>Uniek gemaakt, perfect afgewerkt.</h1>
           <p>Van ontwerp tot afwerking: Atelier Putteman maakt persoonlijke artikelen, professioneel drukwerk en sterk grafisch design met oog voor detail.</p>
           <div class="hero-actions">
-            <a class="btn" href="mailto:info@atelier-putteman.be">Start jouw project</a>
-            <a class="btn secondary" href="#diensten">Bekijk diensten</a>
+            <a class="btn magnetic" href="mailto:info@atelier-putteman.be">Start jouw project</a>
+            <a class="btn secondary magnetic" href="#diensten">Bekijk diensten</a>
           </div>
         </div>
 
@@ -400,7 +603,7 @@
               <span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
             <div class="mockup-title">
-              <img src="logo-atelier-putteman.png" alt="Atelier Putteman logo" style="max-width:340px;margin:0 auto 18px;filter:drop-shadow(0 18px 30px rgba(0,0,0,.24));" onerror="this.style.display='none';">
+              <img src="logo-atelier-putteman.png" alt="Atelier Putteman logo" onerror="this.style.display='none';">
               <b>PUTTEMAN</b>
               <small>KWALITEIT OP MAAT</small>
             </div>
@@ -435,8 +638,7 @@
               <p>Logo’s, huisstijl, flyers, naamkaartjes en ontwerpen op maat. Sterk visueel werk dat past bij jouw zaak.</p>
               <a class="btn secondary" href="mailto:info@atelier-putteman.be?subject=Offerte grafisch design">Vraag ontwerp aan</a>
             </div>
-            <div class="service-visual">
-              <div class="big-word">DESIGN</div>
+            <div class="service-visual visual-design">
               <div class="label">Logo • Huisstijl • Layout</div>
             </div>
           </article>
@@ -447,8 +649,7 @@
               <p>Unieke artikelen voor bedrijven, verenigingen, feesten of cadeaus. Persoonlijk, kwalitatief en mooi afgewerkt.</p>
               <a class="btn secondary" href="mailto:info@atelier-putteman.be?subject=Offerte gepersonaliseerde artikelen">Vraag offerte aan</a>
             </div>
-            <div class="service-visual">
-              <div class="big-word">UNIEK</div>
+            <div class="service-visual visual-items">
               <div class="label">Textiel • Cadeaus • Promotie</div>
             </div>
           </article>
@@ -459,8 +660,7 @@
               <p>Van visitekaartjes en flyers tot stickers, banners en reclamepanelen. Drukwerk dat gezien mag worden.</p>
               <a class="btn secondary" href="mailto:info@atelier-putteman.be?subject=Offerte drukwerk">Bekijk mogelijkheden</a>
             </div>
-            <div class="service-visual">
-              <div class="big-word">PRINT</div>
+            <div class="service-visual visual-print">
               <div class="label">Flyers • Stickers • Banners</div>
             </div>
           </article>
@@ -471,8 +671,7 @@
               <p>Een moderne website die jouw zaak professioneel presenteert, duidelijk communiceert en vertrouwen uitstraalt.</p>
               <a class="btn secondary" href="mailto:info@atelier-putteman.be?subject=Offerte webdesign">Start website</a>
             </div>
-            <div class="service-visual">
-              <div class="big-word">WEB</div>
+            <div class="service-visual visual-web">
               <div class="label">Website • Landingpage • Online stijl</div>
             </div>
           </article>
@@ -485,17 +684,35 @@
         <div class="section-title reveal">
           <div class="eyebrow">Portfolio</div>
           <h2>Projecten met karakter.</h2>
-          <p>Hier kan je later eigen foto’s plaatsen van realisaties zoals textiel, drukwerk, stickers, cadeaus en websites.</p>
+          <p>Ontdek realisaties die het verschil maken voor onze klanten.</p>
+        </div>
+
+        <div class="portfolio-toolbar reveal">
+          <button class="filter-btn active" data-filter="all">Alles</button>
+          <button class="filter-btn" data-filter="textiel">Textiel</button>
+          <button class="filter-btn" data-filter="drukwerk">Drukwerk</button>
+          <button class="filter-btn" data-filter="stickers">Stickers</button>
+          <button class="filter-btn" data-filter="voertuigen">Voertuigen</button>
         </div>
 
         <div class="portfolio-grid">
-          <!-- Vervang later de CSS background van deze kaarten door echte foto's van jouw realisaties -->
-          <div class="portfolio-card project-textiel reveal"><h3>Bedrijfskledij</h3><p>Textiel met logo of gepersonaliseerde opdruk.</p></div>
-          <div class="portfolio-card project-drukwerk reveal"><h3>Drukwerk</h3><p>Flyers, visitekaartjes, stickers en banners.</p></div>
-          <div class="portfolio-card project-design reveal"><h3>Grafisch ontwerp</h3><p>Logo’s, branding en visuele communicatie.</p></div>
-          <div class="portfolio-card project-web reveal"><h3>Webdesign</h3><p>Moderne websites voor zelfstandigen en bedrijven.</p></div>
-          <div class="portfolio-card project-cadeau reveal"><h3>Gepersonaliseerde cadeaus</h3><p>Unieke geschenken met naam, tekst of ontwerp.</p></div>
-          <div class="portfolio-card project-stickers reveal"><h3>Stickers & labels</h3><p>Stickers op maat voor merken, producten en events.</p></div>
+          <div class="portfolio-card reveal" data-category="textiel">
+            <img src="textiel.jpg" alt="Textiel" class="portfolio-img">
+            <span class="project-tag">Textiel</span>
+            <h3>Textiel</h3>
+          </div>
+
+          <div class="portfolio-card reveal" data-category="drukwerk">
+            <img src="drukwerk.jpg" alt="Drukwerk" class="portfolio-img">
+            <span class="project-tag">Drukwerk</span>
+            <h3>Drukwerk</h3>
+          </div>
+
+          <div class="portfolio-card reveal" data-category="stickers voertuigen">
+            <img src="stickers.jpg" alt="Stickers" class="portfolio-img">
+            <span class="project-tag">Stickers</span>
+            <h3>Stickers</h3>
+          </div>
         </div>
       </div>
     </section>
@@ -533,6 +750,14 @@
     </section>
   </main>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Sluiten">×</button>
+      <img id="lightboxImg" src="" alt="Portfolio project groot">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
   <footer>
     <div class="container footer-inner">
       <span>© 2026 Atelier Putteman</span>
@@ -541,14 +766,100 @@
   </footer>
 
   <script>
+    function runWebsiteChecks() {
+      console.assert(document.querySelectorAll('.portfolio-card').length === 3, 'Portfolio moet exact 3 kaarten bevatten.');
+      console.assert(document.querySelectorAll('.filter-btn').length === 5, 'Portfolio moet 5 filterknoppen bevatten.');
+      console.assert(document.getElementById('lightbox'), 'Lightbox moet bestaan.');
+      console.assert(document.getElementById('ambientOrb'), 'Ambient orb moet bestaan.');
+    }
+
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.16 });
+    reveals.forEach((el) => observer.observe(el));
 
-    reveals.forEach(el => observer.observe(el));
+    const ambientOrb = document.getElementById('ambientOrb');
+    if (ambientOrb) {
+      window.addEventListener('mousemove', (event) => {
+        ambientOrb.style.setProperty('--x', `${event.clientX - 260}px`);
+        ambientOrb.style.setProperty('--y', `${event.clientY - 260}px`);
+      });
+    }
+
+    document.querySelectorAll('.portfolio-card').forEach((card) => {
+      card.addEventListener('mousemove', (event) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+        card.style.setProperty('--my', `${event.clientY - rect.top}px`);
+      });
+    });
+
+    document.querySelectorAll('.magnetic').forEach((button) => {
+      button.addEventListener('mousemove', (event) => {
+        const rect = button.getBoundingClientRect();
+        const x = (event.clientX - rect.left - rect.width / 2) * 0.18;
+        const y = (event.clientY - rect.top - rect.height / 2) * 0.18;
+        button.style.transform = `translate(${x}px, ${y}px)`;
+      });
+
+      button.addEventListener('mouseleave', () => {
+        button.style.transform = 'translate(0,0)';
+      });
+    });
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach((btn) => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+        portfolioCards.forEach((card) => {
+          const categories = card.dataset.category || '';
+          const shouldShow = filter === 'all' || categories.split(' ').includes(filter);
+          card.classList.toggle('is-hidden', !shouldShow);
+        });
+      });
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function openLightbox(imageElement) {
+      const card = imageElement.closest('.portfolio-card');
+      const title = card?.querySelector('h3')?.textContent || 'Project';
+      lightboxImg.src = imageElement.src;
+      lightboxCaption.textContent = title;
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    }
+
+    document.querySelectorAll('.portfolio-img').forEach((image) => {
+      image.addEventListener('click', () => openLightbox(image));
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+    });
+
+    runWebsiteChecks();
   </script>
 </body>
 </html>
