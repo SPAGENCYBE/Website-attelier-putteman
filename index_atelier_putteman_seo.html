@@ -3,51 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atelier Putteman | Grafisch design, drukwerk & gepersonaliseerde artikelen</title>
-  <meta name="description" content="Atelier Putteman maakt grafisch design, drukwerk, webdesign, textielbedrukking en gepersonaliseerde artikelen op maat. Uniek gemaakt, perfect afgewerkt." />
-
-  <!-- SEO -->
+  <title>Atelier Putteman | Gepersonaliseerde artikelen, drukwerk & grafisch design</title>
+  <meta name="description" content="Atelier Putteman maakt gepersonaliseerde artikelen, drukwerk, grafisch design en websites op maat. Uniek gemaakt, perfect afgewerkt." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Atelier Putteman" />
-  <meta name="theme-color" content="#393a2e" />
-  <link rel="canonical" href="https://www.atelier-putteman.be" />
+  <meta name="keywords" content="Atelier Putteman, grafisch design, drukwerk, stickers, textielbedrukking, gepersonaliseerde artikelen, webdesign, België" />
+  <link rel="canonical" href="https://www.atelier-putteman.be/" />
 
-  <!-- Open Graph / social sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Atelier Putteman" />
   <meta property="og:title" content="Atelier Putteman | Grafisch design, drukwerk & maatwerk" />
-  <meta property="og:description" content="Gepersonaliseerde artikelen, drukwerk, webdesign en grafisch design op maat. Professioneel, uniek en perfect afgewerkt." />
+  <meta property="og:description" content="Uniek gemaakt, perfect afgewerkt. Grafisch design, drukwerk, textiel, stickers, webdesign en gepersonaliseerde artikelen op maat." />
+  <meta property="og:url" content="https://www.atelier-putteman.be/" />
   <meta property="og:image" content="https://www.atelier-putteman.be/logo-atelier-putteman.png" />
-  <meta property="og:url" content="https://www.atelier-putteman.be" />
-
-  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Atelier Putteman | Grafisch design, drukwerk & maatwerk" />
-  <meta name="twitter:description" content="Gepersonaliseerde artikelen, drukwerk, webdesign en grafisch design op maat." />
-  <meta name="twitter:image" content="https://www.atelier-putteman.be/logo-atelier-putteman.png" />
 
-  <!-- Local Business structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Atelier Putteman",
-    "url": "https://www.atelier-putteman.be",
-    "logo": "https://www.atelier-putteman.be/logo-atelier-putteman.png",
-    "image": "https://www.atelier-putteman.be/logo-atelier-putteman.png",
+    "url": "https://www.atelier-putteman.be/",
     "email": "info@atelier-putteman.be",
     "telephone": "+32475761159",
     "description": "Grafisch design, drukwerk, webdesign en gepersonaliseerde artikelen op maat.",
-    "areaServed": {
-      "@type": "Country",
-      "name": "België"
-    },
-    "sameAs": [
-      "https://www.atelier-putteman.be"
-    ]
+    "areaServed": "België",
+    "sameAs": []
   }
   </script>
-
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -592,7 +575,37 @@
       .mockup-title b { font-size: 32px; }
       .nav-cta { display: none; }
     }
+
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 9998;
+      background: #25D366;
+      color: #ffffff;
+      border-radius: 999px;
+      padding: 14px 18px;
+      font-weight: 900;
+      box-shadow: 0 18px 44px rgba(0,0,0,.32);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 64px rgba(0,0,0,.38);
+    }
+
   </style>
+
+  <script>
+    if (location.hostname === "atelier-putteman.be") {
+      location.href = "https://www.atelier-putteman.be" + location.pathname + location.search + location.hash;
+    }
+  </script>
+
 </head>
 <body>
   <div class="grain"></div>
@@ -740,19 +753,19 @@
 
         <div class="portfolio-grid">
           <div class="portfolio-card reveal" data-category="textiel">
-            <img src="textiel.jpg" alt="Textiel" class="portfolio-img" loading="lazy" decoding="async">
+            <img src="textiel.jpg" loading="lazy" alt="Textiel" class="portfolio-img">
             <span class="project-tag">Textiel</span>
             <h3>Textiel</h3>
           </div>
 
           <div class="portfolio-card reveal" data-category="drukwerk">
-            <img src="drukwerk.jpg" alt="Drukwerk" class="portfolio-img" loading="lazy" decoding="async">
+            <img src="drukwerk.jpg" alt="Drukwerk" class="portfolio-img">
             <span class="project-tag">Drukwerk</span>
             <h3>Drukwerk</h3>
           </div>
 
           <div class="portfolio-card reveal" data-category="stickers voertuigen">
-            <img src="stickers.jpg" alt="Stickers" class="portfolio-img" loading="lazy" decoding="async">
+            <img src="stickers.jpg" loading="lazy" alt="Stickers" class="portfolio-img">
             <span class="project-tag">Stickers</span>
             <h3>Stickers</h3>
           </div>
@@ -782,7 +795,7 @@
         </div>
         <div class="contact-card reveal">
           <h3>Vraag een offerte</h3>
-          <form action="mailto:info@atelier-putteman.be" method="post" enctype="text/plain">
+          <form action="mailto:info@atelier-putteman.be" method="post" enctype="text/plain" onsubmit="alert('Bedankt! Je mailprogramma wordt geopend om je aanvraag te versturen.')">
             <input type="text" name="naam" placeholder="Naam" required>
             <input type="email" name="email" placeholder="E-mailadres" required>
             <textarea name="bericht" placeholder="Vertel kort wat je nodig hebt"></textarea>
@@ -800,6 +813,8 @@
       <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
   </div>
+
+  <a class="whatsapp-float" href="https://wa.me/32475761159" target="_blank" rel="noopener" aria-label="Contacteer Atelier Putteman via WhatsApp">WhatsApp</a>
 
   <footer>
     <div class="container footer-inner">
