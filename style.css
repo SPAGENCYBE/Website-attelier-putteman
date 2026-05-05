@@ -536,3 +536,14 @@
       .mockup-title b { font-size: 32px; }
       .nav-cta { display: none; }
     }
+
+.form-note {
+  color: rgba(216, 201, 167, .62);
+  font-size: 13px;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+.secure-contact-form input[type="tel"] {
+  width: 100%;
+}

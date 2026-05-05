@@ -1,6 +1,9 @@
-UPLOAD NAAR GITHUB
+FORMULIER UPDATE
 
-Upload deze bestanden in dezelfde repo:
+Deze versie gebruikt Formspree via Basic HTML:
+https://formspree.io/f/xlgzbpbg
+
+Upload naar GitHub:
 - index.html
 - style.css
 - app.js
@@ -8,18 +11,13 @@ Upload deze bestanden in dezelfde repo:
 - robots.txt
 - sitemap.xml
 
-Laat je bestaande afbeeldingen ook staan:
-- logo-atelier-putteman.png
-- grafisch-design.png
-- gepersonaliseerd.png
-- drukwerk.png
-- webdesign.png
-- textiel.jpg
-- drukwerk.jpg
-- stickers.jpg
-- favicon.ico
-- apple-touch-icon.png
+Laat je afbeeldingen en favicon staan in dezelfde repo.
 
-Belangrijk:
-- index.html verwijst nu naar style.css en app.js.
-- Verwijder oude inline versies niet apart; vervang gewoon index.html door deze versie.
+Waarom Basic HTML?
+Je site draait statisch via GitHub Pages. Basic HTML is hiervoor het meest stabiel, veilig en zonder extra JavaScript-bibliotheken.
+
+Test:
+1. Upload de bestanden.
+2. Open https://www.atelier-putteman.be
+3. Verstuur één testbericht.
+4. Bevestig je Formspree e-mailadres als Formspree dat vraagt.

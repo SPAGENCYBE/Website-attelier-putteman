@@ -28,7 +28,7 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Browser security: werkt op GitHub Pages via HTML/meta waar mogelijk -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io; upgrade-insecure-requests;">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -243,12 +243,15 @@
         </div>
         <div class="contact-card reveal">
           <h3>Vraag een offerte</h3>
-          <form action="mailto:info@atelier-putteman.be" method="post" enctype="text/plain" onsubmit="alert('Bedankt voor je aanvraag. We nemen zo snel mogelijk contact met je op.');">
+          <form action="https://formspree.io/f/xlgzbpbg" method="POST" class="secure-contact-form">
+            <input type="hidden" name="_subject" value="Nieuwe offerteaanvraag via Atelier Putteman">
             <input type="text" name="naam" autocomplete="name" placeholder="Naam" required>
             <input type="email" name="email" autocomplete="email" placeholder="E-mailadres" required>
-            <textarea name="bericht" placeholder="Vertel kort wat je nodig hebt"></textarea>
+            <input type="tel" name="telefoon" autocomplete="tel" placeholder="Telefoonnummer (optioneel)">
+            <textarea name="bericht" placeholder="Vertel kort wat je nodig hebt" required></textarea>
             <button class="btn" type="submit">Verstuur aanvraag</button>
           </form>
+          <p class="form-note">Formspree verwerkt je aanvraag beveiligd via HTTPS. Je gegevens worden enkel gebruikt om jouw vraag te beantwoorden.</p>
         </div>
       </div>
     </section>
