@@ -1,0 +1,25 @@
+UPLOAD NAAR GITHUB
+
+Upload deze bestanden in dezelfde repo:
+- index.html
+- style.css
+- app.js
+- CNAME
+- robots.txt
+- sitemap.xml
+
+Laat je bestaande afbeeldingen ook staan:
+- logo-atelier-putteman.png
+- grafisch-design.png
+- gepersonaliseerd.png
+- drukwerk.png
+- webdesign.png
+- textiel.jpg
+- drukwerk.jpg
+- stickers.jpg
+- favicon.ico
+- apple-touch-icon.png
+
+Belangrijk:
+- index.html verwijst nu naar style.css en app.js.
+- Verwijder oude inline versies niet apart; vervang gewoon index.html door deze versie.

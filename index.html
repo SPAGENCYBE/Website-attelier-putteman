@@ -1,601 +1,59 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier Putteman | Grafisch design, drukwerk, textiel & maatwerk</title>
+  <meta name="description" content="Atelier Putteman maakt grafisch design, drukwerk, textielbedrukking, stickers, webdesign en gepersonaliseerde artikelen op maat voor bedrijven en particulieren." />
+
+  <!-- Basis SEO -->
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Atelier Putteman">
+  <meta name="theme-color" content="#393a2e">
+  <link rel="canonical" href="https://www.atelier-putteman.be/">
+
+  <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atelier Putteman | Grafisch design, drukwerk & gepersonaliseerde artikelen</title>
-  <meta name="description" content="Atelier Putteman maakt grafisch design, drukwerk, webdesign, textielbedrukking en gepersonaliseerde artikelen op maat. Uniek gemaakt, perfect afgewerkt." />
 
-  <!-- SEO -->
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Atelier Putteman" />
-  <meta name="theme-color" content="#393a2e" />
-  <link rel="canonical" href="https://www.atelier-putteman.be" />
+  <!-- Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_BE">
+  <meta property="og:site_name" content="Atelier Putteman">
+  <meta property="og:title" content="Atelier Putteman | Grafisch design, drukwerk & maatwerk">
+  <meta property="og:description" content="Gepersonaliseerde artikelen, drukwerk, stickers, textielbedrukking, grafisch design en webdesign op maat.">
+  <meta property="og:image" content="https://www.atelier-putteman.be/logo-atelier-putteman.png">
+  <meta property="og:url" content="https://www.atelier-putteman.be/">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Open Graph / social sharing -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Atelier Putteman" />
-  <meta property="og:title" content="Atelier Putteman | Grafisch design, drukwerk & maatwerk" />
-  <meta property="og:description" content="Gepersonaliseerde artikelen, drukwerk, webdesign en grafisch design op maat. Professioneel, uniek en perfect afgewerkt." />
-  <meta property="og:image" content="https://www.atelier-putteman.be/logo-atelier-putteman.png" />
-  <meta property="og:url" content="https://www.atelier-putteman.be" />
+  <!-- Browser security: werkt op GitHub Pages via HTML/meta waar mogelijk -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests;">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Atelier Putteman | Grafisch design, drukwerk & maatwerk" />
-  <meta name="twitter:description" content="Gepersonaliseerde artikelen, drukwerk, webdesign en grafisch design op maat." />
-  <meta name="twitter:image" content="https://www.atelier-putteman.be/logo-atelier-putteman.png" />
-
-  <!-- Local Business structured data -->
+  <!-- Lokale bedrijfsgegevens voor Google -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Atelier Putteman",
-    "url": "https://www.atelier-putteman.be",
-    "logo": "https://www.atelier-putteman.be/logo-atelier-putteman.png",
-    "image": "https://www.atelier-putteman.be/logo-atelier-putteman.png",
+    "url": "https://www.atelier-putteman.be/",
     "email": "info@atelier-putteman.be",
     "telephone": "+32475761159",
-    "description": "Grafisch design, drukwerk, webdesign en gepersonaliseerde artikelen op maat.",
-    "areaServed": {
-      "@type": "Country",
-      "name": "België"
-    },
-    "sameAs": [
-      "https://www.atelier-putteman.be"
-    ]
+    "description": "Grafisch design, drukwerk, textielbedrukking, stickers, webdesign en gepersonaliseerde artikelen op maat.",
+    "areaServed": ["Dendermonde", "Oost-Vlaanderen", "België"],
+    "sameAs": []
   }
   </script>
 
+  <!-- Forceer veilige www-versie -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --green: #4e513f;
-      --orange: #ffa239;
-      --dark: #393a2e;
-      --beige: #d8c9a7;
-      --white: #fffaf0;
-      --muted: rgba(216, 201, 167, .72);
-      --line: rgba(216, 201, 167, .22);
-      --shadow: 0 28px 80px rgba(0, 0, 0, .28);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Inter, system-ui, sans-serif;
-      background: var(--dark);
-      color: var(--white);
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 16% 20%, rgba(255, 162, 57, .22), transparent 30%),
-        radial-gradient(circle at 84% 6%, rgba(216, 201, 167, .18), transparent 28%),
-        linear-gradient(135deg, var(--green), var(--dark) 62%);
-      z-index: -3;
-    }
-
-    .grain {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .12;
-      z-index: -2;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-    }
-
-    .ambient-orb {
-      position: fixed;
-      width: 520px;
-      height: 520px;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: -1;
-      filter: blur(34px);
-      opacity: .20;
-      background: radial-gradient(circle, var(--orange), transparent 68%);
-      transform: translate3d(var(--x, 70vw), var(--y, 20vh), 0);
-      transition: transform .18s ease-out;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
-
-    .topbar {
-      background: var(--orange);
-      color: var(--dark);
-      text-align: center;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-size: 12px;
-      padding: 9px 16px;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 99;
-      backdrop-filter: blur(18px);
-      background: rgba(57, 58, 46, .76);
-      border-bottom: 1px solid rgba(216, 201, 167, .16);
-    }
-
-    nav {
-      height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand { display: flex; align-items: center; }
-    .brand-logo {
-      width: 140px;
-      height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 14px 28px rgba(0,0,0,.35));
-    }
-    .brand-mark {
-      width: 54px;
-      height: 54px;
-      border: 2px solid var(--beige);
-      border-radius: 50%;
-      display: none;
-      place-items: center;
-      color: var(--orange);
-      font-weight: 900;
-      font-size: 22px;
-      box-shadow: inset 0 -10px 0 rgba(255, 162, 57, .18);
-    }
-
-    .menu { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: 14px; font-weight: 700; }
-    .menu a { transition: .25s ease; }
-    .menu a:hover { color: var(--orange); }
-
-    .nav-cta, .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border-radius: 999px;
-      padding: 13px 22px;
-      background: var(--orange);
-      color: var(--dark);
-      font-weight: 900;
-      border: 1px solid rgba(255,255,255,.14);
-      box-shadow: 0 16px 36px rgba(255, 162, 57, .24);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .nav-cta:hover, .btn:hover { transform: translateY(-3px); box-shadow: 0 22px 54px rgba(255, 162, 57, .30); }
-    .btn.secondary { background: transparent; color: var(--beige); border: 1px solid var(--line); box-shadow: none; }
-    .magnetic { transition: transform .18s ease; }
-
-    .hero {
-      min-height: calc(100vh - 112px);
-      display: grid;
-      place-items: center;
-      padding: 84px 0 110px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      width: 100%;
-      height: 120px;
-      background: linear-gradient(to bottom, transparent, rgba(57,58,46,.96));
-      pointer-events: none;
-    }
-    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 58px; align-items: center; }
-
-    .premium-line {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: -1;
-    }
-    .premium-line svg {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: min(920px, 120vw);
-      height: 100%;
-      transform: translateX(-50%);
-      opacity: .42;
-    }
-    .premium-line path {
-      fill: none;
-      stroke: url(#lineGradient);
-      stroke-width: 5;
-      stroke-linecap: round;
-      stroke-dasharray: 1600;
-      stroke-dashoffset: 1600;
-      animation: drawLine 3.2s ease forwards 1s;
-    }
-    @keyframes drawLine { to { stroke-dashoffset: 0; } }
-
-    .eyebrow { color: var(--orange); font-weight: 900; letter-spacing: .24em; text-transform: uppercase; font-size: 13px; margin-bottom: 18px; }
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(54px, 8vw, 112px);
-      line-height: .92;
-      letter-spacing: -.055em;
-      color: var(--beige);
-      max-width: 760px;
-    }
-    .hero p { color: var(--muted); font-size: 19px; max-width: 620px; margin: 28px 0 34px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
-
-    .hero-card {
-      position: relative;
-      min-height: 620px;
-      border: 1px solid var(--line);
-      border-radius: 44px;
-      background: linear-gradient(145deg, rgba(216,201,167,.12), rgba(255,255,255,.02));
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      padding: 34px;
-      isolation: isolate;
-      transform-style: preserve-3d;
-      will-change: transform;
-      transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
-    }
-    .hero-card:hover { transform: translateY(-10px) scale(1.01); }
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 450px;
-      height: 450px;
-      border: 52px solid var(--orange);
-      border-radius: 50%;
-      right: -160px;
-      top: -170px;
-      opacity: .95;
-      z-index: -1;
-    }
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border: 42px solid var(--beige);
-      border-radius: 50%;
-      left: -230px;
-      bottom: -220px;
-      opacity: .92;
-      z-index: -1;
-    }
-    .mockup {
-      height: 100%;
-      min-height: 550px;
-      border: 1px solid rgba(216,201,167,.30);
-      background: rgba(57,58,46,.70);
-      border-radius: 32px;
-      padding: 38px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-    }
-    .dots { display: grid; grid-template-columns: repeat(2, 6px); gap: 18px; opacity: .55; }
-    .dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--beige); }
-    .mockup-title { align-self: center; text-align: center; }
-    .mockup-title img { max-width: 340px; margin: 0 auto 18px; filter: drop-shadow(0 18px 30px rgba(0,0,0,.24)); }
-    .mockup-title b { display:block; color: var(--beige); font-size: 42px; letter-spacing: .02em; }
-    .mockup-title small { color: var(--orange); letter-spacing: .45em; font-weight: 900; }
-    .mockup-bottom { display: grid; gap: 14px; color: var(--beige); font-weight: 800; text-transform: uppercase; font-size: 20px; }
-
-    .marquee { overflow: hidden; border-block: 1px solid var(--line); padding: 22px 0; color: var(--beige); background: rgba(0,0,0,.12); }
-    .marquee-track { display: flex; gap: 36px; width: max-content; animation: marquee 26s linear infinite; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
-    @keyframes marquee { to { transform: translateX(-50%); } }
-
-    .section { padding: 110px 0; position: relative; }
-    .section-title { max-width: 760px; margin-bottom: 46px; }
-    .section-title h2 { font-family: "Playfair Display", serif; font-size: clamp(42px, 5vw, 72px); line-height: .96; color: var(--beige); letter-spacing: -.04em; }
-    .section-title p { color: var(--muted); margin-top: 18px; font-size: 18px; }
-
-    .services { display: grid; gap: 38px; }
-    .service {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 38px;
-      align-items: center;
-      min-height: 420px;
-    }
-    .service:nth-child(even) { grid-template-columns: 1.15fr .85fr; }
-    .service:nth-child(even) .service-copy { order: 2; }
-    .service-copy { padding: 26px; }
-    .service-copy h3 { font-size: clamp(34px, 4vw, 58px); line-height: .95; color: var(--white); letter-spacing: -.04em; margin-bottom: 18px; }
-    .service-copy p { color: var(--muted); font-size: 18px; max-width: 520px; margin-bottom: 24px; }
-
-    .service-visual {
-      min-height: 420px;
-      border-radius: 38px;
-      overflow: hidden;
-      border: 1px solid rgba(216,201,167,.26);
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 34px 90px rgba(0,0,0,.34);
-      position: relative;
-      isolation: isolate;
-      transform-style: preserve-3d;
-      will-change: transform;
-      transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, border-color .45s ease, filter .45s ease;
-    }
-    .service-visual::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to top, rgba(24,25,20,.82), rgba(57,58,46,.28) 48%, rgba(255,162,57,.08)),
-        radial-gradient(circle at 18% 82%, rgba(255,162,57,.32), transparent 34%);
-      z-index: 1;
-      transition: opacity .45s ease;
-    }
-    .service-visual::after {
-      content: "";
-      position: absolute;
-      inset: 24px;
-      border: 1px solid rgba(255,250,240,.28);
-      border-radius: 28px;
-      z-index: 2;
-      pointer-events: none;
-      box-shadow: inset 0 0 0 1px rgba(255,162,57,.08);
-    }
-    .service-visual .label {
-      position: absolute;
-      left: 32px;
-      bottom: 32px;
-      background: rgba(255,250,240,.88);
-      color: var(--dark);
-      border-radius: 999px;
-      padding: 15px 22px;
-      font-weight: 900;
-      box-shadow: 0 18px 44px rgba(0,0,0,.26);
-      z-index: 3;
-      backdrop-filter: blur(12px);
-      transform: translateY(10px);
-      opacity: .92;
-      transition: transform .35s ease, opacity .35s ease, background .35s ease;
-    }
-    .service-visual:hover {
-      transform: translateY(-12px) scale(1.018);
-      box-shadow: 0 44px 110px rgba(0,0,0,.44);
-      border-color: rgba(255,162,57,.52);
-      filter: saturate(1.08) contrast(1.04);
-    }
-    .service-visual:hover .label { transform: translateY(0); opacity: 1; background: rgba(255,250,240,.96); }
-    .service-visual:hover::before { opacity: .92; }
-    .visual-design { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('grafisch-design.png'); }
-    .visual-items { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('gepersonaliseerd.png'); }
-    .visual-print { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('drukwerk.png'); }
-    .visual-web { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('webdesign.png'); }
-
-    .portfolio-toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: -14px 0 32px;
-    }
-    .filter-btn {
-      border: 1px solid var(--line);
-      background: rgba(216,201,167,.08);
-      color: var(--beige);
-      border-radius: 999px;
-      padding: 11px 18px;
-      font-weight: 900;
-      cursor: pointer;
-      transition: .25s ease;
-    }
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--orange);
-      color: var(--dark);
-      border-color: var(--orange);
-      transform: translateY(-2px);
-    }
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .portfolio-card {
-      min-height: 380px;
-      border-radius: 28px;
-      background: linear-gradient(145deg, rgba(216,201,167,.14), rgba(255,255,255,.04));
-      border: 1px solid var(--line);
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      box-shadow: 0 18px 55px rgba(0,0,0,.18);
-      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
-      overflow: hidden;
-      position: relative;
-      transform-style: preserve-3d;
-      will-change: transform;
-    }
-    .portfolio-card::before {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(216,201,167,.18);
-      border-radius: 22px;
-      pointer-events: none;
-      z-index: 2;
-    }
-    .portfolio-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,162,57,.18), transparent 34%);
-      opacity: 0;
-      transition: opacity .25s ease;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .portfolio-card:hover {
-      transform: translateY(-10px) scale(1.01);
-      border-color: rgba(255,162,57,.42);
-      box-shadow: 0 28px 80px rgba(0,0,0,.26);
-    }
-    .portfolio-card:hover::after { opacity: 1; }
-    .portfolio-card > * { position: relative; z-index: 3; }
-    .portfolio-img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 22px;
-      margin-bottom: 18px;
-      transition: transform .55s cubic-bezier(.2,.8,.2,1), filter .4s ease;
-      cursor: zoom-in;
-    }
-    .portfolio-card:hover .portfolio-img { transform: scale(1.06); filter: contrast(1.04) saturate(1.08); }
-    .project-tag {
-      display: inline-flex;
-      width: fit-content;
-      border: 1px solid rgba(255,162,57,.45);
-      color: var(--orange);
-      border-radius: 999px;
-      padding: 6px 11px;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      background: rgba(255,162,57,.08);
-    }
-    .portfolio-card h3 { color: var(--beige); font-size: 23px; }
-    .portfolio-card p { color: var(--muted); font-size: 14px; margin-top: 8px; }
-    .portfolio-card.is-hidden { display: none; }
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: rgba(12,13,10,.92);
-      backdrop-filter: blur(16px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 28px;
-    }
-    .lightbox.active { display: flex; }
-    .lightbox-content { width: min(1100px, 100%); position: relative; }
-    .lightbox img {
-      width: 100%;
-      max-height: 78vh;
-      object-fit: contain;
-      border-radius: 28px;
-      border: 1px solid var(--line);
-      box-shadow: 0 44px 110px rgba(0,0,0,.55);
-    }
-    .lightbox-caption { color: var(--beige); margin-top: 16px; font-weight: 900; text-align: center; }
-    .lightbox-close {
-      position: absolute;
-      right: -12px;
-      top: -54px;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      background: rgba(216,201,167,.10);
-      color: var(--beige);
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    .cta-panel {
-      border-radius: 44px;
-      padding: clamp(38px, 6vw, 76px);
-      background:
-        radial-gradient(circle at 15% 20%, rgba(255,162,57,.46), transparent 32%),
-        linear-gradient(135deg, var(--green), var(--dark));
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 26px;
-      overflow: hidden;
-      position: relative;
-    }
-    .cta-panel::after {
-      content: "";
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      border: 42px solid var(--orange);
-      border-radius: 50%;
-      right: -120px;
-      top: -130px;
-      opacity: .45;
-    }
-    .cta-panel h2 { position: relative; z-index: 1; color: var(--beige); font-family: "Playfair Display", serif; font-size: clamp(42px, 5vw, 76px); line-height: .94; letter-spacing: -.04em; }
-    .cta-panel p { position: relative; z-index: 1; color: var(--muted); margin-top: 16px; font-size: 18px; }
-    .cta-panel .btn { position: relative; z-index: 1; }
-
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .contact-card {
-      border: 1px solid var(--line);
-      background: rgba(216,201,167,.08);
-      border-radius: 28px;
-      padding: 32px;
-    }
-    .contact-card h3 { color: var(--orange); margin-bottom: 18px; font-size: 24px; }
-    .contact-card p, .contact-card a { color: var(--beige); font-size: 18px; display: block; margin: 8px 0; }
-
-    form { display: grid; gap: 14px; }
-    input, textarea {
-      width: 100%;
-      border: 1px solid var(--line);
-      background: rgba(57,58,46,.78);
-      color: var(--white);
-      border-radius: 16px;
-      padding: 15px 16px;
-      font: inherit;
-      outline: none;
-    }
-    textarea { min-height: 130px; resize: vertical; }
-    input::placeholder, textarea::placeholder { color: rgba(216,201,167,.55); }
-
-    footer { padding: 42px 0; border-top: 1px solid var(--line); color: var(--muted); }
-    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
-
-    .reveal { opacity: 0; transform: translateY(34px); transition: opacity .8s ease, transform .8s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 920px) {
-      .menu { display: none; }
-      .hero-grid, .service, .service:nth-child(even), .contact-grid, .cta-panel { grid-template-columns: 1fr; }
-      .service:nth-child(even) .service-copy { order: 0; }
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .hero-card { min-height: 460px; }
-      .mockup { min-height: 390px; }
-      .mockup-title b { font-size: 32px; }
-      .nav-cta { display: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="grain"></div>
@@ -605,7 +63,7 @@
   <header>
     <nav class="container">
       <a href="#home" class="brand" aria-label="Atelier Putteman home">
-        <img class="brand-logo" src="logo-atelier-putteman.png" alt="Atelier Putteman logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <img loading="eager" decoding="async" class="brand-logo" src="logo-atelier-putteman.png" alt="Atelier Putteman logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
         <div class="brand-mark">AP</div>
       </a>
       <div class="menu">
@@ -649,7 +107,7 @@
               <span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
             <div class="mockup-title">
-              <img src="logo-atelier-putteman.png" alt="Atelier Putteman logo" onerror="this.style.display='none';">
+              <img loading="lazy" decoding="async" src="logo-atelier-putteman.png" alt="Atelier Putteman logo" onerror="this.style.display='none';">
               <b>PUTTEMAN</b>
               <small>KWALITEIT OP MAAT</small>
             </div>
@@ -743,19 +201,19 @@
 
         <div class="portfolio-grid">
           <div class="portfolio-card reveal" data-category="textiel">
-            <img src="textiel.jpg" alt="Textiel" class="portfolio-img" loading="lazy" decoding="async">
+            <img loading="lazy" decoding="async" src="textiel.jpg" alt="Textiel" class="portfolio-img">
             <span class="project-tag">Textiel</span>
             <h3>Textiel</h3>
           </div>
 
           <div class="portfolio-card reveal" data-category="drukwerk">
-            <img src="drukwerk.jpg" alt="Drukwerk" class="portfolio-img" loading="lazy" decoding="async">
+            <img loading="lazy" decoding="async" src="drukwerk.jpg" alt="Drukwerk" class="portfolio-img">
             <span class="project-tag">Drukwerk</span>
             <h3>Drukwerk</h3>
           </div>
 
           <div class="portfolio-card reveal" data-category="stickers voertuigen">
-            <img src="stickers.jpg" alt="Stickers" class="portfolio-img" loading="lazy" decoding="async">
+            <img loading="lazy" decoding="async" src="stickers.jpg" alt="Stickers" class="portfolio-img">
             <span class="project-tag">Stickers</span>
             <h3>Stickers</h3>
           </div>
@@ -779,15 +237,15 @@
       <div class="container contact-grid">
         <div class="contact-card reveal">
           <h3>Contact</h3>
-          <a href="mailto:info@atelier-putteman.be">info@atelier-putteman.be</a>
-          <a href="tel:+32475761159">+32 475 76 11 59</a>
+          <a href="mailto:info@atelier-putteman.be" aria-label="Mail naar Atelier Putteman">info@atelier-putteman.be</a>
+          <a href="tel:+32475761159" aria-label="Bel Atelier Putteman">+32 475 76 11 59</a>
           <a href="https://www.atelier-putteman.be">www.atelier-putteman.be</a>
         </div>
         <div class="contact-card reveal">
           <h3>Vraag een offerte</h3>
-          <form action="mailto:info@atelier-putteman.be" method="post" enctype="text/plain">
-            <input type="text" name="naam" placeholder="Naam" required>
-            <input type="email" name="email" placeholder="E-mailadres" required>
+          <form action="mailto:info@atelier-putteman.be" method="post" enctype="text/plain" onsubmit="alert('Bedankt voor je aanvraag. We nemen zo snel mogelijk contact met je op.');">
+            <input type="text" name="naam" autocomplete="name" placeholder="Naam" required>
+            <input type="email" name="email" autocomplete="email" placeholder="E-mailadres" required>
             <textarea name="bericht" placeholder="Vertel kort wat je nodig hebt"></textarea>
             <button class="btn" type="submit">Verstuur aanvraag</button>
           </form>
@@ -799,7 +257,7 @@
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-content">
       <button class="lightbox-close" id="lightboxClose" aria-label="Sluiten">×</button>
-      <img id="lightboxImg" src="" alt="Portfolio project groot">
+      <img loading="lazy" decoding="async" id="lightboxImg" src="" alt="Portfolio project groot">
       <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
   </div>
@@ -810,102 +268,6 @@
       <span>Gepersonaliseerde artikelen • Drukwerk • Grafisch design</span>
     </div>
   </footer>
-
-  <script>
-    function runWebsiteChecks() {
-      console.assert(document.querySelectorAll('.portfolio-card').length === 3, 'Portfolio moet exact 3 kaarten bevatten.');
-      console.assert(document.querySelectorAll('.filter-btn').length === 5, 'Portfolio moet 5 filterknoppen bevatten.');
-      console.assert(document.getElementById('lightbox'), 'Lightbox moet bestaan.');
-      console.assert(document.getElementById('ambientOrb'), 'Ambient orb moet bestaan.');
-    }
-
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.16 });
-    reveals.forEach((el) => observer.observe(el));
-
-    const ambientOrb = document.getElementById('ambientOrb');
-    if (ambientOrb) {
-      window.addEventListener('mousemove', (event) => {
-        ambientOrb.style.setProperty('--x', `${event.clientX - 260}px`);
-        ambientOrb.style.setProperty('--y', `${event.clientY - 260}px`);
-      });
-    }
-
-    document.querySelectorAll('.portfolio-card').forEach((card) => {
-      card.addEventListener('mousemove', (event) => {
-        const rect = card.getBoundingClientRect();
-        card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
-        card.style.setProperty('--my', `${event.clientY - rect.top}px`);
-      });
-    });
-
-    document.querySelectorAll('.magnetic').forEach((button) => {
-      button.addEventListener('mousemove', (event) => {
-        const rect = button.getBoundingClientRect();
-        const x = (event.clientX - rect.left - rect.width / 2) * 0.18;
-        const y = (event.clientY - rect.top - rect.height / 2) * 0.18;
-        button.style.transform = `translate(${x}px, ${y}px)`;
-      });
-
-      button.addEventListener('mouseleave', () => {
-        button.style.transform = 'translate(0,0)';
-      });
-    });
-
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioCards = document.querySelectorAll('.portfolio-card');
-
-    filterButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        filterButtons.forEach((btn) => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        const filter = button.dataset.filter;
-        portfolioCards.forEach((card) => {
-          const categories = card.dataset.category || '';
-          const shouldShow = filter === 'all' || categories.split(' ').includes(filter);
-          card.classList.toggle('is-hidden', !shouldShow);
-        });
-      });
-    });
-
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const lightboxClose = document.getElementById('lightboxClose');
-
-    function openLightbox(imageElement) {
-      const card = imageElement.closest('.portfolio-card');
-      const title = card?.querySelector('h3')?.textContent || 'Project';
-      lightboxImg.src = imageElement.src;
-      lightboxCaption.textContent = title;
-      lightbox.classList.add('active');
-      lightbox.setAttribute('aria-hidden', 'false');
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      lightbox.setAttribute('aria-hidden', 'true');
-      lightboxImg.src = '';
-    }
-
-    document.querySelectorAll('.portfolio-img').forEach((image) => {
-      image.addEventListener('click', () => openLightbox(image));
-    });
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (event) => {
-      if (event.target === lightbox) closeLightbox();
-    });
-    window.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
-    });
-
-    runWebsiteChecks();
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
