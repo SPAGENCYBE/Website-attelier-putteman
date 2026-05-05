@@ -1,43 +1,4 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atelier Putteman | Gepersonaliseerde artikelen, drukwerk & grafisch design</title>
-  <meta name="description" content="Atelier Putteman maakt gepersonaliseerde artikelen, drukwerk, grafisch design en websites op maat. Uniek gemaakt, perfect afgewerkt." />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Atelier Putteman" />
-  <meta name="keywords" content="Atelier Putteman, grafisch design, drukwerk, stickers, textielbedrukking, gepersonaliseerde artikelen, webdesign, België" />
-  <link rel="canonical" href="https://www.atelier-putteman.be/" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Atelier Putteman" />
-  <meta property="og:title" content="Atelier Putteman | Grafisch design, drukwerk & maatwerk" />
-  <meta property="og:description" content="Uniek gemaakt, perfect afgewerkt. Grafisch design, drukwerk, textiel, stickers, webdesign en gepersonaliseerde artikelen op maat." />
-  <meta property="og:url" content="https://www.atelier-putteman.be/" />
-  <meta property="og:image" content="https://www.atelier-putteman.be/logo-atelier-putteman.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Atelier Putteman",
-    "url": "https://www.atelier-putteman.be/",
-    "email": "info@atelier-putteman.be",
-    "telephone": "+32475761159",
-    "description": "Grafisch design, drukwerk, webdesign en gepersonaliseerde artikelen op maat.",
-    "areaServed": "België",
-    "sameAs": []
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
+:root {
       --green: #4e513f;
       --orange: #ffa239;
       --dark: #393a2e;
@@ -367,10 +328,10 @@
     }
     .service-visual:hover .label { transform: translateY(0); opacity: 1; background: rgba(255,250,240,.96); }
     .service-visual:hover::before { opacity: .92; }
-    .visual-design { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('grafisch-design.png'); }
-    .visual-items { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('gepersonaliseerd.png'); }
-    .visual-print { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('drukwerk.png'); }
-    .visual-web { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('webdesign.png'); }
+    .visual-design { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('assets/img/grafisch-design.png'); }
+    .visual-items { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('assets/img/gepersonaliseerd.png'); }
+    .visual-print { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('assets/img/drukwerk.png'); }
+    .visual-web { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('assets/img/webdesign.png'); }
 
     .portfolio-toolbar {
       display: flex;
@@ -565,9 +526,120 @@
     .reveal { opacity: 0; transform: translateY(34px); transition: opacity .8s ease, transform .8s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
+
+    .premium-contact {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 34px;
+      align-items: center;
+      border-radius: 44px;
+      padding: clamp(34px, 6vw, 72px);
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 12% 22%, rgba(255,162,57,.36), transparent 34%),
+        linear-gradient(145deg, rgba(216,201,167,.12), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .premium-contact::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 52px solid rgba(255,162,57,.46);
+      border-radius: 50%;
+      right: -190px;
+      top: -185px;
+      z-index: -1;
+    }
+
+    .premium-contact::after {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border: 1px solid rgba(216,201,167,.20);
+      border-radius: 32px;
+      pointer-events: none;
+    }
+
+    .premium-contact-copy h2 {
+      color: var(--beige);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 5vw, 76px);
+      line-height: .94;
+      letter-spacing: -.04em;
+      margin-bottom: 18px;
+    }
+
+    .premium-contact-copy p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 620px;
+    }
+
+    .premium-contact-actions {
+      display: grid;
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-action {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      border-radius: 22px;
+      border: 1px solid rgba(216,201,167,.22);
+      background: rgba(57,58,46,.70);
+      box-shadow: 0 18px 44px rgba(0,0,0,.18);
+      transition: transform .28s ease, border-color .28s ease, background .28s ease;
+    }
+
+    .contact-action:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,162,57,.58);
+      background: rgba(78,81,63,.86);
+    }
+
+    .contact-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: var(--orange);
+      color: var(--dark);
+      font-size: 24px;
+      font-weight: 900;
+      box-shadow: 0 14px 34px rgba(255,162,57,.22);
+    }
+
+    .contact-action small {
+      display: block;
+      color: var(--orange);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 900;
+      margin-bottom: 2px;
+    }
+
+    .contact-action strong {
+      display: block;
+      color: var(--beige);
+      font-size: clamp(15px, 2vw, 18px);
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
     @media (max-width: 920px) {
       .menu { display: none; }
-      .hero-grid, .service, .service:nth-child(even), .contact-grid, .cta-panel { grid-template-columns: 1fr; }
+      .hero-grid, .service, .service:nth-child(even), .contact-grid, .cta-panel, .premium-contact { grid-template-columns: 1fr; }
       .service:nth-child(even) .service-copy { order: 0; }
       .portfolio-grid { grid-template-columns: 1fr; }
       .hero-card { min-height: 460px; }
@@ -575,349 +647,3 @@
       .mockup-title b { font-size: 32px; }
       .nav-cta { display: none; }
     }
-
-
-    .whatsapp-float {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 9998;
-      background: #25D366;
-      color: #ffffff;
-      border-radius: 999px;
-      padding: 14px 18px;
-      font-weight: 900;
-      box-shadow: 0 18px 44px rgba(0,0,0,.32);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .whatsapp-float:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 26px 64px rgba(0,0,0,.38);
-    }
-
-  </style>
-
-  <script>
-    if (location.hostname === "atelier-putteman.be") {
-      location.href = "https://www.atelier-putteman.be" + location.pathname + location.search + location.hash;
-    }
-  </script>
-
-</head>
-<body>
-  <div class="grain"></div>
-  <div class="ambient-orb" id="ambientOrb"></div>
-  <div class="topbar">Uniek gemaakt • Perfect afgewerkt • Kwaliteit op maat</div>
-
-  <header>
-    <nav class="container">
-      <a href="#home" class="brand" aria-label="Atelier Putteman home">
-        <img class="brand-logo" src="logo-atelier-putteman.png" alt="Atelier Putteman logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-        <div class="brand-mark">AP</div>
-      </a>
-      <div class="menu">
-        <a href="#diensten">Diensten</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <a class="nav-cta" href="mailto:info@atelier-putteman.be">Offerte aanvragen</a>
-    </nav>
-  </header>
-
-  <main id="home">
-    <section class="hero">
-      <div class="premium-line" aria-hidden="true">
-        <svg viewBox="0 0 900 1200" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#ffa239"/>
-              <stop offset="50%" stop-color="#d8c9a7"/>
-              <stop offset="100%" stop-color="#ffa239"/>
-            </linearGradient>
-          </defs>
-          <path d="M455 0 C 260 180, 700 250, 430 430 S 280 720, 535 835 S 700 1040, 445 1200"/>
-        </svg>
-      </div>
-
-      <div class="container hero-grid">
-        <div class="reveal">
-          <div class="eyebrow">Gepersonaliseerde artikelen • Drukwerk • Grafisch design</div>
-          <h1>Uniek gemaakt, perfect afgewerkt.</h1>
-          <p>Van ontwerp tot afwerking: Atelier Putteman maakt persoonlijke artikelen, professioneel drukwerk en sterk grafisch design met oog voor detail.</p>
-          <div class="hero-actions">
-            <a class="btn magnetic" href="mailto:info@atelier-putteman.be">Start jouw project</a>
-            <a class="btn secondary magnetic" href="#diensten">Bekijk diensten</a>
-          </div>
-        </div>
-
-        <div class="hero-card reveal">
-          <div class="mockup">
-            <div class="dots" aria-hidden="true">
-              <span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="mockup-title">
-              <img src="logo-atelier-putteman.png" alt="Atelier Putteman logo" onerror="this.style.display='none';">
-              <b>PUTTEMAN</b>
-              <small>KWALITEIT OP MAAT</small>
-            </div>
-            <div class="mockup-bottom">
-              <span>Gepersonaliseerde artikelen</span>
-              <span>Drukwerk & grafisch design</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Logo ontwerp</span><span>Textielbedrukking</span><span>Stickers</span><span>Flyers</span><span>Webdesign</span><span>Visitekaartjes</span><span>Promotieartikelen</span>
-        <span>Logo ontwerp</span><span>Textielbedrukking</span><span>Stickers</span><span>Flyers</span><span>Webdesign</span><span>Visitekaartjes</span><span>Promotieartikelen</span>
-      </div>
-    </div>
-
-    <section class="section" id="diensten">
-      <div class="container">
-        <div class="section-title reveal">
-          <div class="eyebrow">Onze specialiteiten</div>
-          <h2>Alles voor een sterke, herkenbare uitstraling.</h2>
-          <p>Wij combineren creatief ontwerp met verzorgde productie, zodat jouw merk, cadeau of project meteen professioneel aanvoelt.</p>
-        </div>
-
-        <div class="services">
-          <article class="service reveal">
-            <div class="service-copy">
-              <h3>Grafisch design</h3>
-              <p>Logo’s, huisstijl, flyers, naamkaartjes en ontwerpen op maat. Sterk visueel werk dat past bij jouw zaak.</p>
-              <a class="btn secondary" href="mailto:info@atelier-putteman.be?subject=Offerte grafisch design">Vraag ontwerp aan</a>
-            </div>
-            <div class="service-visual visual-design">
-              <div class="label">Logo • Huisstijl • Layout</div>
-            </div>
-          </article>
-
-          <article class="service reveal">
-            <div class="service-copy">
-              <h3>Gepersonaliseerde artikelen</h3>
-              <p>Unieke artikelen voor bedrijven, verenigingen, feesten of cadeaus. Persoonlijk, kwalitatief en mooi afgewerkt.</p>
-              <a class="btn secondary" href="mailto:info@atelier-putteman.be?subject=Offerte gepersonaliseerde artikelen">Vraag offerte aan</a>
-            </div>
-            <div class="service-visual visual-items">
-              <div class="label">Textiel • Cadeaus • Promotie</div>
-            </div>
-          </article>
-
-          <article class="service reveal">
-            <div class="service-copy">
-              <h3>Drukwerk</h3>
-              <p>Van visitekaartjes en flyers tot stickers, banners en reclamepanelen. Drukwerk dat gezien mag worden.</p>
-              <a class="btn secondary" href="mailto:info@atelier-putteman.be?subject=Offerte drukwerk">Bekijk mogelijkheden</a>
-            </div>
-            <div class="service-visual visual-print">
-              <div class="label">Flyers • Stickers • Banners</div>
-            </div>
-          </article>
-
-          <article class="service reveal">
-            <div class="service-copy">
-              <h3>Webdesign</h3>
-              <p>Een moderne website die jouw zaak professioneel presenteert, duidelijk communiceert en vertrouwen uitstraalt.</p>
-              <a class="btn secondary" href="mailto:info@atelier-putteman.be?subject=Offerte webdesign">Start website</a>
-            </div>
-            <div class="service-visual visual-web">
-              <div class="label">Website • Landingpage • Online stijl</div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="portfolio">
-      <div class="container">
-        <div class="section-title reveal">
-          <div class="eyebrow">Portfolio</div>
-          <h2>Projecten met karakter.</h2>
-          <p>Ontdek realisaties die het verschil maken voor onze klanten.</p>
-        </div>
-
-        <div class="portfolio-toolbar reveal">
-          <button class="filter-btn active" data-filter="all">Alles</button>
-          <button class="filter-btn" data-filter="textiel">Textiel</button>
-          <button class="filter-btn" data-filter="drukwerk">Drukwerk</button>
-          <button class="filter-btn" data-filter="stickers">Stickers</button>
-          <button class="filter-btn" data-filter="voertuigen">Voertuigen</button>
-        </div>
-
-        <div class="portfolio-grid">
-          <div class="portfolio-card reveal" data-category="textiel">
-            <img src="textiel.jpg" loading="lazy" alt="Textiel" class="portfolio-img">
-            <span class="project-tag">Textiel</span>
-            <h3>Textiel</h3>
-          </div>
-
-          <div class="portfolio-card reveal" data-category="drukwerk">
-            <img src="drukwerk.jpg" alt="Drukwerk" class="portfolio-img">
-            <span class="project-tag">Drukwerk</span>
-            <h3>Drukwerk</h3>
-          </div>
-
-          <div class="portfolio-card reveal" data-category="stickers voertuigen">
-            <img src="stickers.jpg" loading="lazy" alt="Stickers" class="portfolio-img">
-            <span class="project-tag">Stickers</span>
-            <h3>Stickers</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="cta-panel reveal">
-          <div>
-            <h2>Klaar om jouw idee vorm te geven?</h2>
-            <p>Stuur ons jouw vraag en wij denken mee vanaf het eerste ontwerp tot de perfecte afwerking.</p>
-          </div>
-          <a class="btn" href="mailto:info@atelier-putteman.be">Contacteer ons</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-card reveal">
-          <h3>Contact</h3>
-          <a href="mailto:info@atelier-putteman.be">info@atelier-putteman.be</a>
-          <a href="tel:+32475761159">+32 475 76 11 59</a>
-          <a href="https://www.atelier-putteman.be">www.atelier-putteman.be</a>
-        </div>
-        <div class="contact-card reveal">
-          <h3>Vraag een offerte</h3>
-          <form action="mailto:info@atelier-putteman.be" method="post" enctype="text/plain" onsubmit="alert('Bedankt! Je mailprogramma wordt geopend om je aanvraag te versturen.')">
-            <input type="text" name="naam" placeholder="Naam" required>
-            <input type="email" name="email" placeholder="E-mailadres" required>
-            <textarea name="bericht" placeholder="Vertel kort wat je nodig hebt"></textarea>
-            <button class="btn" type="submit">Verstuur aanvraag</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-content">
-      <button class="lightbox-close" id="lightboxClose" aria-label="Sluiten">×</button>
-      <img id="lightboxImg" src="" alt="Portfolio project groot">
-      <div class="lightbox-caption" id="lightboxCaption"></div>
-    </div>
-  </div>
-
-  <a class="whatsapp-float" href="https://wa.me/32475761159" target="_blank" rel="noopener" aria-label="Contacteer Atelier Putteman via WhatsApp">WhatsApp</a>
-
-  <footer>
-    <div class="container footer-inner">
-      <span>© 2026 Atelier Putteman</span>
-      <span>Gepersonaliseerde artikelen • Drukwerk • Grafisch design</span>
-    </div>
-  </footer>
-
-  <script>
-    function runWebsiteChecks() {
-      console.assert(document.querySelectorAll('.portfolio-card').length === 3, 'Portfolio moet exact 3 kaarten bevatten.');
-      console.assert(document.querySelectorAll('.filter-btn').length === 5, 'Portfolio moet 5 filterknoppen bevatten.');
-      console.assert(document.getElementById('lightbox'), 'Lightbox moet bestaan.');
-      console.assert(document.getElementById('ambientOrb'), 'Ambient orb moet bestaan.');
-    }
-
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.16 });
-    reveals.forEach((el) => observer.observe(el));
-
-    const ambientOrb = document.getElementById('ambientOrb');
-    if (ambientOrb) {
-      window.addEventListener('mousemove', (event) => {
-        ambientOrb.style.setProperty('--x', `${event.clientX - 260}px`);
-        ambientOrb.style.setProperty('--y', `${event.clientY - 260}px`);
-      });
-    }
-
-    document.querySelectorAll('.portfolio-card').forEach((card) => {
-      card.addEventListener('mousemove', (event) => {
-        const rect = card.getBoundingClientRect();
-        card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
-        card.style.setProperty('--my', `${event.clientY - rect.top}px`);
-      });
-    });
-
-    document.querySelectorAll('.magnetic').forEach((button) => {
-      button.addEventListener('mousemove', (event) => {
-        const rect = button.getBoundingClientRect();
-        const x = (event.clientX - rect.left - rect.width / 2) * 0.18;
-        const y = (event.clientY - rect.top - rect.height / 2) * 0.18;
-        button.style.transform = `translate(${x}px, ${y}px)`;
-      });
-
-      button.addEventListener('mouseleave', () => {
-        button.style.transform = 'translate(0,0)';
-      });
-    });
-
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioCards = document.querySelectorAll('.portfolio-card');
-
-    filterButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        filterButtons.forEach((btn) => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        const filter = button.dataset.filter;
-        portfolioCards.forEach((card) => {
-          const categories = card.dataset.category || '';
-          const shouldShow = filter === 'all' || categories.split(' ').includes(filter);
-          card.classList.toggle('is-hidden', !shouldShow);
-        });
-      });
-    });
-
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const lightboxClose = document.getElementById('lightboxClose');
-
-    function openLightbox(imageElement) {
-      const card = imageElement.closest('.portfolio-card');
-      const title = card?.querySelector('h3')?.textContent || 'Project';
-      lightboxImg.src = imageElement.src;
-      lightboxCaption.textContent = title;
-      lightbox.classList.add('active');
-      lightbox.setAttribute('aria-hidden', 'false');
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      lightbox.setAttribute('aria-hidden', 'true');
-      lightboxImg.src = '';
-    }
-
-    document.querySelectorAll('.portfolio-img').forEach((image) => {
-      image.addEventListener('click', () => openLightbox(image));
-    });
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (event) => {
-      if (event.target === lightbox) closeLightbox();
-    });
-    window.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
-    });
-
-    runWebsiteChecks();
-  </script>
-</body>
-</html>

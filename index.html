@@ -1,107 +1,262 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier Putteman | Gepersonaliseerde artikelen, drukwerk & grafisch design</title>
+  <meta name="description" content="Atelier Putteman maakt gepersonaliseerde artikelen, drukwerk, grafisch design en websites op maat. Uniek gemaakt, perfect afgewerkt." />
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Atelier Putteman">
+  <meta name="theme-color" content="#393a2e">
+  <link rel="canonical" href="https://www.atelier-putteman.be/">
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_BE">
+  <meta property="og:site_name" content="Atelier Putteman">
+  <meta property="og:title" content="Atelier Putteman | Grafisch design, drukwerk & maatwerk">
+  <meta property="og:description" content="Gepersonaliseerde artikelen, drukwerk, stickers, textielbedrukking, grafisch design en webdesign op maat.">
+  <meta property="og:image" content="https://www.atelier-putteman.be/assets/img/logo-atelier-putteman.png">
+  <meta property="og:url" content="https://www.atelier-putteman.be/">
+  <meta name="twitter:card" content="summary_large_image">
 
-<title>Atelier Putteman | Grafisch design, drukwerk & maatwerk</title>
-<meta name="description" content="Grafisch design, drukwerk, textiel en maatwerk in Dendermonde en omgeving.">
-
-<link rel="icon" href="favicon.ico">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-<link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
+  <div class="grain"></div>
+  <div class="ambient-orb" id="ambientOrb"></div>
+  <div class="topbar">Uniek gemaakt • Perfect afgewerkt • Kwaliteit op maat</div>
 
-<header>
-  <img src="logo-atelier-putteman.png" class="logo">
-</header>
-
-<section class="hero">
-  <h1>Grafisch design & maatwerk</h1>
-  <p>Professionele ontwerpen, drukwerk en gepersonaliseerde producten.</p>
-</section>
-
-<section class="diensten">
-  <h2>Diensten</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="grafisch-design.png">
-      <h3>Grafisch Design</h3>
-    </div>
-
-    <div class="card">
-      <img src="drukwerk.png">
-      <h3>Drukwerk</h3>
-    </div>
-
-    <div class="card">
-      <img src="gepersonaliseerd.png">
-      <h3>Textiel</h3>
-    </div>
-
-    <div class="card">
-      <img src="webdesign.png">
-      <h3>Webdesign</h3>
-    </div>
-
-  </div>
-</section>
-
-<section class="portfolio">
-  <h2>Portfolio</h2>
-  <p>Ontdek realisaties die het verschil maken voor onze klanten.</p>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="textiel.jpg">
-      <h3>Textiel</h3>
-    </div>
-
-    <div class="card">
-      <img src="drukwerk.jpg">
-      <h3>Drukwerk</h3>
-    </div>
-
-    <div class="card">
-      <img src="stickers.jpg">
-      <h3>Stickers</h3>
-    </div>
-
-  </div>
-</section>
-
-<section class="contact">
-
-  <div class="contact-box">
-
-    <h2>Contacteer ons</h2>
-    <p>Heb je een vraag of wil je een offerte? Neem rechtstreeks contact op.</p>
-
-    <div class="contact-links">
-      
-      <a href="mailto:info@atelier-putteman.be" class="contact-item">
-        📧 info@atelier-putteman.be
+  <header>
+    <nav class="container">
+      <a href="#home" class="brand" aria-label="Atelier Putteman home">
+        <img class="brand-logo" src="assets/img/logo-atelier-putteman.png" alt="Atelier Putteman logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <div class="brand-mark">AP</div>
       </a>
+      <div class="menu">
+        <a href="#diensten">Diensten</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-cta" href="mailto:info@atelier-putteman.be">Offerte aanvragen</a>
+    </nav>
+  </header>
 
-      <a href="tel:+32475761159" class="contact-item">
-        📞 +32 475 76 11 59
-      </a>
+  <main id="home">
+    <section class="hero">
+      <div class="premium-line" aria-hidden="true">
+        <svg viewBox="0 0 900 1200" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffa239"/>
+              <stop offset="50%" stop-color="#d8c9a7"/>
+              <stop offset="100%" stop-color="#ffa239"/>
+            </linearGradient>
+          </defs>
+          <path d="M455 0 C 260 180, 700 250, 430 430 S 280 720, 535 835 S 700 1040, 445 1200"/>
+        </svg>
+      </div>
 
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Gepersonaliseerde artikelen • Drukwerk • Grafisch design</div>
+          <h1>Uniek gemaakt, perfect afgewerkt.</h1>
+          <p>Van ontwerp tot afwerking: Atelier Putteman maakt persoonlijke artikelen, professioneel drukwerk en sterk grafisch design met oog voor detail.</p>
+          <div class="hero-actions">
+            <a class="btn magnetic" href="mailto:info@atelier-putteman.be">Start jouw project</a>
+            <a class="btn secondary magnetic" href="#diensten">Bekijk diensten</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="mockup">
+            <div class="dots" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="mockup-title">
+              <img src="assets/img/logo-atelier-putteman.png" alt="Atelier Putteman logo" onerror="this.style.display='none';">
+              <b>PUTTEMAN</b>
+              <small>KWALITEIT OP MAAT</small>
+            </div>
+            <div class="mockup-bottom">
+              <span>Gepersonaliseerde artikelen</span>
+              <span>Drukwerk & grafisch design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Logo ontwerp</span><span>Textielbedrukking</span><span>Stickers</span><span>Flyers</span><span>Webdesign</span><span>Visitekaartjes</span><span>Promotieartikelen</span>
+        <span>Logo ontwerp</span><span>Textielbedrukking</span><span>Stickers</span><span>Flyers</span><span>Webdesign</span><span>Visitekaartjes</span><span>Promotieartikelen</span>
+      </div>
     </div>
 
+    <section class="section" id="diensten">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="eyebrow">Onze specialiteiten</div>
+          <h2>Alles voor een sterke, herkenbare uitstraling.</h2>
+          <p>Wij combineren creatief ontwerp met verzorgde productie, zodat jouw merk, cadeau of project meteen professioneel aanvoelt.</p>
+        </div>
+
+        <div class="services">
+          <article class="service reveal">
+            <div class="service-copy">
+              <h3>Grafisch design</h3>
+              <p>Logo’s, huisstijl, flyers, naamkaartjes en ontwerpen op maat. Sterk visueel werk dat past bij jouw zaak.</p>
+              <a class="btn secondary" href="mailto:info@atelier-putteman.be?subject=Offerte grafisch design">Vraag ontwerp aan</a>
+            </div>
+            <div class="service-visual visual-design">
+              <div class="label">Logo • Huisstijl • Layout</div>
+            </div>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-copy">
+              <h3>Gepersonaliseerde artikelen</h3>
+              <p>Unieke artikelen voor bedrijven, verenigingen, feesten of cadeaus. Persoonlijk, kwalitatief en mooi afgewerkt.</p>
+              <a class="btn secondary" href="mailto:info@atelier-putteman.be?subject=Offerte gepersonaliseerde artikelen">Vraag offerte aan</a>
+            </div>
+            <div class="service-visual visual-items">
+              <div class="label">Textiel • Cadeaus • Promotie</div>
+            </div>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-copy">
+              <h3>Drukwerk</h3>
+              <p>Van visitekaartjes en flyers tot stickers, banners en reclamepanelen. Drukwerk dat gezien mag worden.</p>
+              <a class="btn secondary" href="mailto:info@atelier-putteman.be?subject=Offerte drukwerk">Bekijk mogelijkheden</a>
+            </div>
+            <div class="service-visual visual-print">
+              <div class="label">Flyers • Stickers • Banners</div>
+            </div>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-copy">
+              <h3>Webdesign</h3>
+              <p>Een moderne website die jouw zaak professioneel presenteert, duidelijk communiceert en vertrouwen uitstraalt.</p>
+              <a class="btn secondary" href="mailto:info@atelier-putteman.be?subject=Offerte webdesign">Start website</a>
+            </div>
+            <div class="service-visual visual-web">
+              <div class="label">Website • Landingpage • Online stijl</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="eyebrow">Portfolio</div>
+          <h2>Projecten met karakter.</h2>
+          <p>Ontdek realisaties die het verschil maken voor onze klanten.</p>
+        </div>
+
+        <div class="portfolio-toolbar reveal">
+          <button class="filter-btn active" data-filter="all">Alles</button>
+          <button class="filter-btn" data-filter="textiel">Textiel</button>
+          <button class="filter-btn" data-filter="drukwerk">Drukwerk</button>
+          <button class="filter-btn" data-filter="stickers">Stickers</button>
+          <button class="filter-btn" data-filter="voertuigen">Voertuigen</button>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-card reveal" data-category="textiel">
+            <img src="assets/img/textiel.jpg" alt="Textiel" class="portfolio-img">
+            <span class="project-tag">Textiel</span>
+            <h3>Textiel</h3>
+          </div>
+
+          <div class="portfolio-card reveal" data-category="drukwerk">
+            <img src="assets/img/drukwerk.jpg" alt="Drukwerk" class="portfolio-img">
+            <span class="project-tag">Drukwerk</span>
+            <h3>Drukwerk</h3>
+          </div>
+
+          <div class="portfolio-card reveal" data-category="stickers voertuigen">
+            <img src="assets/img/stickers.jpg" alt="Stickers" class="portfolio-img">
+            <span class="project-tag">Stickers</span>
+            <h3>Stickers</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div>
+            <h2>Klaar om jouw idee vorm te geven?</h2>
+            <p>Stuur ons jouw vraag en wij denken mee vanaf het eerste ontwerp tot de perfecte afwerking.</p>
+          </div>
+          <a class="btn" href="mailto:info@atelier-putteman.be">Contacteer ons</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="premium-contact reveal">
+          <div class="premium-contact-copy">
+            <div class="eyebrow">Contact</div>
+            <h2>Klaar om jouw idee vorm te geven?</h2>
+            <p>Heb je een vraag, wil je een offerte of wil je samen bekijken wat mogelijk is? Neem rechtstreeks contact op en we helpen je graag verder.</p>
+          </div>
+
+          <div class="premium-contact-actions">
+            <a class="contact-action" href="mailto:info@atelier-putteman.be" aria-label="Mail naar Atelier Putteman">
+              <span class="contact-icon">✉</span>
+              <span>
+                <small>Mail ons</small>
+                <strong>info@atelier-putteman.be</strong>
+              </span>
+            </a>
+
+            <a class="contact-action" href="tel:+32475761159" aria-label="Bel Atelier Putteman">
+              <span class="contact-icon">☎</span>
+              <span>
+                <small>Bel ons</small>
+                <strong>+32 475 76 11 59</strong>
+              </span>
+            </a>
+
+            <a class="contact-action" href="https://www.atelier-putteman.be" aria-label="Bezoek Atelier Putteman website">
+              <span class="contact-icon">⌁</span>
+              <span>
+                <small>Website</small>
+                <strong>www.atelier-putteman.be</strong>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Sluiten">×</button>
+      <img id="lightboxImg" src="" alt="Portfolio project groot">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
   </div>
 
-</section>
-
-<footer>
-  <p>© Atelier Putteman</p>
-</footer>
-
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Atelier Putteman</span>
+      <span>Gepersonaliseerde artikelen • Drukwerk • Grafisch design</span>
+    </div>
+  </footer>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

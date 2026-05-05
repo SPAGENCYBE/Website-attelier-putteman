@@ -1,23 +1,29 @@
-FORMULIER UPDATE
+MAPSTRUCTUUR
 
-Deze versie gebruikt Formspree via Basic HTML:
-https://formspree.io/f/xlgzbpbg
+Upload deze volledige structuur naar GitHub:
 
-Upload naar GitHub:
-- index.html
-- style.css
-- app.js
-- CNAME
-- robots.txt
-- sitemap.xml
+index.html
+CNAME
+robots.txt
+sitemap.xml
+assets/
+  css/
+    style.css
+  js/
+    app.js
+  img/
+    logo-atelier-putteman.png
+    grafisch-design.png
+    gepersonaliseerd.png
+    drukwerk.png
+    webdesign.png
+    textiel.jpg
+    drukwerk.jpg
+    stickers.jpg
+  icons/
+    favicon.ico
+    apple-touch-icon.png
 
-Laat je afbeeldingen en favicon staan in dezelfde repo.
-
-Waarom Basic HTML?
-Je site draait statisch via GitHub Pages. Basic HTML is hiervoor het meest stabiel, veilig en zonder extra JavaScript-bibliotheken.
-
-Test:
-1. Upload de bestanden.
-2. Open https://www.atelier-putteman.be
-3. Verstuur één testbericht.
-4. Bevestig je Formspree e-mailadres als Formspree dat vraagt.
+BELANGRIJK:
+Omdat de afbeeldingen nu in assets/img/ staan, moeten ze daar effectief ook staan.
+Het contactformulier is verwijderd. Er is nu één premium contactblok met mail, telefoon en website.
