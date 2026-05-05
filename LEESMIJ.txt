@@ -1,6 +1,14 @@
-MAPSTRUCTUUR
+BELANGRIJKSTE FIX
 
-Upload deze volledige structuur naar GitHub:
+Je index.html was goed. Het probleem zat normaal in style.css:
+style.css staat in assets/css/
+Daarom moeten background-images verwijzen naar ../img/bestand.png
+NIET naar assets/img/bestand.png.
+
+Correct:
+.visual-design { background-image: url('../img/grafisch-design.png'); }
+
+Upload deze structuur naar GitHub:
 
 index.html
 CNAME
@@ -24,6 +32,4 @@ assets/
     favicon.ico
     apple-touch-icon.png
 
-BELANGRIJK:
-Omdat de afbeeldingen nu in assets/img/ staan, moeten ze daar effectief ook staan.
-Het contactformulier is verwijderd. Er is nu één premium contactblok met mail, telefoon en website.
+Als een foto nog niet toont: controleer hoofdletters exact. GitHub is hoofdlettergevoelig.

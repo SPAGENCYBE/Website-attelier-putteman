@@ -328,10 +328,10 @@
     }
     .service-visual:hover .label { transform: translateY(0); opacity: 1; background: rgba(255,250,240,.96); }
     .service-visual:hover::before { opacity: .92; }
-    .visual-design { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('assets/img/grafisch-design.png'); }
-    .visual-items { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('assets/img/gepersonaliseerd.png'); }
-    .visual-print { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('assets/img/drukwerk.png'); }
-    .visual-web { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('assets/img/webdesign.png'); }
+    .visual-design { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('../img/grafisch-design.png'); }
+    .visual-items { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('../img/gepersonaliseerd.png'); }
+    .visual-print { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('../img/drukwerk.png'); }
+    .visual-web { background-image: linear-gradient(to top, rgba(57,58,46,.25), transparent), url('../img/webdesign.png'); }
 
     .portfolio-toolbar {
       display: flex;
